@@ -1,0 +1,3 @@
+include ':freedom'
+include ':app'
+rootProject.name = "FreedomExample"
