@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         /* Initialize this library in onCreate method of LAUNCHER Activity.
            For Example : Splash Screen */
-        Freedom.initialize(this)
+        Freedom.initialize(this, BuildConfig.FreedomTime)
                 .setExpireAfterDays(3)
                 .setWorkForAllVariant(false)
                 .setMessage("This APK has expired, please contact the developer to get a new APK.")

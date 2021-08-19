@@ -23,16 +23,18 @@ public class Freedom {
     private boolean haveToClearAllNotification = true;
     private int days = DEFAULT_DAYS;
     private String message = DEFAULT_MESSAGE;
+    private final Long freedomTime;
 
-    private Freedom(Activity activity) {
+    private Freedom(Activity activity, long freedomTime) {
         this.activity = activity;
+        this.freedomTime = freedomTime;
     }
 
-    public static Freedom initialize(Activity activity) {
+    public static Freedom initialize(Activity activity, long freedomTime) {
         if (instance == null) {
             synchronized (Freedom.class) {
                 if (instance == null) {
-                    instance = new Freedom(activity);
+                    instance = new Freedom(activity, freedomTime);
                 }
             }
         }
@@ -46,7 +48,7 @@ public class Freedom {
     }
 
     private boolean isExpired() {
-        long appBuildTimeStamp = BuildConfig.FreedomTime;
+        long appBuildTimeStamp = freedomTime;
         long currentTimeStamp = System.currentTimeMillis();
         long apkExpireTimeStamp = appBuildTimeStamp + getMillisFromDays();
 

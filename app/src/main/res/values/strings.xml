@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">FreedomExample</string>
+    <string name="app_name">Freedom Example</string>
+    <string name="thanks_for_using_freedom">Thanks for using Freedom</string>
 </resources>
