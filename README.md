@@ -1,3 +1,4 @@
+
 # Freedom [![](https://jitpack.io/v/kishansinghpanwar/Freedom.svg)](https://jitpack.io/#kishansinghpanwar/Freedom )
 **This android library allows you to set the expiry date of APK to restrict the app use for a valid time, which gives you freedom to risk of misuse the Presentation/Demo app of any project.**
 
@@ -17,7 +18,19 @@ allprojects {
  - Step 2. Add the dependency
  ```
 dependencies {
-      implementation 'com.github.kishansinghpanwar:Freedom:1.0.0'
+      implementation 'com.github.kishansinghpanwar:Freedom:v1.0.1'
+}
+ ```  
+  - Step 3. Add the buildConfigField in Build.gradle(app) file
+ 
+
+*Freedom required this parameter for fetch the build created time.*
+
+ ```
+android { 
+	defaultConfig {  
+		  buildConfigField "long", "FreedomTime", System.currentTimeMillis() + "L"  
+	} 
 }
  ```  
 **Basic Usage :**
@@ -25,9 +38,9 @@ dependencies {
 *Initialize this library in onCreate method of LAUNCHER Activity.
 For Example : Splash Screen*
 
-    Freedom.initialize(this)
+    Freedom.initialize(this, BuildConfig.FreedomTime)
 		   .setExpireAfterDays(3)
-	           .setWorkForAllVariant(false)
+	      	   .setWorkForAllVariant(false)
 		   .setMessage("This APK has expired, please contact the developer to get a new APK.")
 		   .setHaveToShowMessage(true)
 		   .setHaveToClearNotifications(false)
