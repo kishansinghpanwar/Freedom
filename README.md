@@ -95,3 +95,14 @@ This option  is used for set if you want to clear all notification if app build 
 
 To use this library, please see this layout  : 
 [MainActivity.java](https://github.com/kishansinghpanwar/Freedom/blob/master/app/src/main/java/com/app/freedomexample/MainActivity.java)
+
+
+	
+## Support
+
+For support, email singhkishanpanwar@gmail.com or send message to Skype : https://join.skype.com/invite/fBcaUWiNAWTh
+
+
+## Contribution
+
+🌟 Thank you for using this library and If this is useful for you, then please Star 🌟 this. Also you can send pull request and create a issue for any bug. Thanks again.
